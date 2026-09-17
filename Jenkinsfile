@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/<student-username>/<repo-name>.git'
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/kmohanraj741-commits/parameterized-pipeline.git']])
             }
         }
         stage('Show Parameter') {
